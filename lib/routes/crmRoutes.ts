@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {TradeController} from "controllers/TradeController";
+import { TradeController } from "./../controllers/TradeController";
 
 export class Routes {    
     public tradeController: TradeController = new TradeController();

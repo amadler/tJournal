@@ -4,8 +4,8 @@ import { Routes } from "./routes/crmRoutes";
 import * as mongoose from "mongoose";
 
 
-class App {
 
+class App {
     public app: express.Application;
     public routePrv: Routes = new Routes();
     constructor() {
