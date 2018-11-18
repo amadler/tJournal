@@ -1,28 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-exports.TradeCommentSchema = new Schema({
-    firstName: {
+const mongoose_1 = require("mongoose");
+let CommentSchema = new mongoose_1.Schema({
+    title: {
         type: String,
-        required: 'Enter a first name'
+        required: 'Enter a title'
     },
-    lastName: {
+    createdAt: Date,
+    slug: {
         type: String,
-        required: 'Enter a last name'
+        default: '',
+        required: true,
+        unique: true
     },
-    email: {
-        type: String
-    },
-    company: {
-        type: String
-    },
-    phone: {
-        type: Number
-    },
-    created_date: {
-        type: Date,
-        default: Date.now
+    content: {
+        type: String,
+        default: ''
     }
 });
+exports.default = mongoose_1.model('Comment', CommentSchema);
 //# sourceMappingURL=tradeComments.js.map

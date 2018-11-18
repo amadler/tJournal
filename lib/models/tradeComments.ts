@@ -1,11 +1,21 @@
-import * as mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const Schema = mongoose.Schema;
 
-export const TradeCommentSchema = new Schema({
-    firstName: {
+let CommentSchema: Schema = new Schema({
+    title: {
         type: String,
-        required: 'Enter a first name'
+        required: 'Enter a title'
+    },
+    createdAt: Date,
+    slug: {
+        type: String,
+        default:'',
+        required: true,
+        unique:true
+    },
+    content:{
+        type:String,
+        default:''
     }
-   
-});
+})
+export default model('Comment', CommentSchema)
